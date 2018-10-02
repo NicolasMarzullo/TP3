@@ -26,12 +26,14 @@ public class TestPolinomio {
 	//hacer un txt con los coeficientes primero de a 100 y a 1000 y a 10000 y sucesivamente
 		
 		double[] coeficientes = {2,3,1,4,5};
-		Polinomio polinomio = new Polinomio(4, coeficientes);
+		Polinomio polinomio = new Polinomio(3, coeficientes);
 		
 		Assert.assertEquals(269, polinomio.evaluarRecursiva(3),0.0);
 		
 		
-		
 	}
+	
+	
+	
 
 }

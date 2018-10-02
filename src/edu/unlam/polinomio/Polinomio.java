@@ -36,10 +36,9 @@ public class Polinomio {
 		for(;i<this.grado;i++)
 			resultado += coeficionetes[i] * potenciaRecursiva(x, grado-i);
 
-			
-		
 		return resultado += coeficionetes[i];
 	}
+
 	
 	
 	//Calculo de potencia mediante multiplicaciones sucesivas
@@ -53,14 +52,32 @@ public class Polinomio {
 		return resultadoADevolver;
 	}
 	
-	//Calculo de potencia considerando si es par o impar
+
 	private double potenciaRecursiva(double x, int n) {
+		if (n%2==0)
+			return potenciaRecursivaPar(x, n);
+		
+		return potenciaRecursivaImpar(x, n);
+	}
+	
+	
+	private double potenciaRecursivaImpar(double x, int n) {
 		
 		if(n==0)
 			return 1;
-		
-		return x*potenciaRecursiva(x, n-1);
+
+		return x*potenciaRecursivaImpar(x, n-1);
 	}
+	
+	private double potenciaRecursivaPar(double x, int n) {
+		
+		if(n==1)
+			return x;
+
+		return potenciaRecursivaPar(x*x, n/2);
+	}
+	
+	
 	
 	
 }
